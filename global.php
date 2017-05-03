@@ -67,7 +67,7 @@ session_destroy();
 header("location: /");
 exit;
 }else{
-// log all ip's
+// log all ip's for security
 $fetchIP = mysqli_query($db,"SELECT * FROM iprecords WHERE ip='$IP' AND linkedTo='".$user['id']."'");
 $IPKnown = mysqli_num_rows($fetchIP);
 if($IPKnown == "0"){
