@@ -57,9 +57,10 @@ if (!empty($_SERVER['HTTP_CLIENT_IP']))
 
   return $x." ago";
 }
-
+$getSiteConfig = mysqli_query($db,"SELECT * FROM siteconfiguration");
+$configs = mysqli_fetch_array($getSiteConfig);
 if($User){
-$getUser = mysqli_query($db,"SELECT * FROM Users WHERE Username='$User'");
+$getUser = mysqli_query($db,"SELECT * FROM users WHERE Username='$User'");
 $user = mysqli_fetch_array($getUser);
 $userExists = mysqli_num_rows($getUser);
 if($userExists == "0" || $user['password'] != $Password){
@@ -149,7 +150,12 @@ $Bux = $user['currency'];
 									$Bux = number_format($Bux);
 }
 
-
+$now = time();
+if($now > $user['currencytime']){
+$setTime = $now + 86400;
+$newCurrency = $user['currency'] + $configs['setCurrency'];
+mysqli_query($db,"UPDATE users SET currency='$newCurrency' WHERE id='".$user['id']."'");
+}
     
 }
 
