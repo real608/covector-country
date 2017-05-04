@@ -74,6 +74,80 @@ if($IPKnown == "0"){
 mysqli_query($db,"INSERT INTO iprecords(ip,linkedTo)VALUES('$IP','".$user['id']."')");
 }
 
+$Bux = $user['currency'];
+							
+								if ($Bux >= 100000&&$Bux <= 999999) {
+								
+									$BuxShort = substr($Bux, 0,3);
+									
+									$Bux = "".$BuxShort."K+";
+								
+								}
+								else if ($Bux >= 1000000&&$Bux <= 9999999) {
+								
+									$BuxShort = substr($Bux, 0,1);
+									
+									$Bux = "".$BuxShort."M+";
+								
+								}
+								else if ($Bux >= 10000000&&$Bux <= 99999999) {
+								
+									$BuxShort = substr($Bux, 0,2);
+									
+									$Bux = "".$BuxShort."M+";
+								
+								}
+								else if ($Bux >= 100000000&&$Bux <= 999999999) {
+								
+									$BuxShort = substr($Bux, 0,3);
+									
+									$Bux = "".$BuxShort."M+";
+								
+								}
+								else if ($Bux >= 1000000000&&$Bux <= 9999999999) {
+								
+									$BuxShort = substr($Bux, 0,1);
+									
+									$Bux = "".$BuxShort."B+";
+								
+								}
+								else if ($Bux >= 10000000000&&$Bux <= 99999999999) {
+								
+									$BuxShort = substr($Bux, 0,2);
+									
+									$Bux = "".$BuxShort."B+";
+								
+								}
+								else if ($Bux >= 100000000000&&$Bux <= 999999999999) {
+								
+									$BuxShort = substr($Bux, 0,3);
+									
+									$Bux = "".$BuxShort."B+";
+								
+								}
+								else if ($Bux >= 1000000000000&&$Bux <= 9999999999999) {
+								
+									$BuxShort = substr($Bux, 0,1);
+									
+									$Bux = "".$BuxShort."T+";
+								
+								}
+								else if ($Bux >= 10000000000000&&$Bux <= 99999999999999) {
+								
+									$BuxShort = substr($Bux, 0,2);
+									
+									$Bux = "".$BuxShort."T+";
+								
+								}
+								else if ($Bux >= 1000000000) {
+								
+									$Bux = "&#8734;";
+								
+								}
+								else if ($Bux >= 100&&$Bux <= 99999) {
+								
+									$Bux = number_format($Bux);
+}
 
 
     
