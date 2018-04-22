@@ -1,6 +1,6 @@
 ## Social Avatar Network Script v3.0
 
-Hold tight, things will get messy here. Nothing in this repo is complete/started.
+This is now completely discontinued and will no longer receive any updates or patches.
 
 ## License Attributions
-SANS 3.0 is licensed under the Creative Commons 4.0 International No Derivatives & Commercial attribution. You may read more about this at this link: https://creativecommons.org/licenses/by-nc-nd/4.0/
+SANS 3.0 is now no longer copyrighted.
